@@ -4,7 +4,7 @@ theme_packages="arc-gtk-theme"
 theme="Arc-Dark"
 shell_theme="Arc-Dark"
 icon_theme="Papirus-Dark-Maia"
-aur_packages="spotify discord mutter-781835-workaround"
+aur_packages="spotify discord"
 
 
 read -p "Continue? Only do this, if you freshly installed manjaro! (y/N) " start
@@ -58,6 +58,10 @@ echo "2.2.1: Restart Pulseaudio"
 pulseaudio -k
 sleep 2
 pulseaudio --start
+echo
+echo "3. Notes"
+echo
+echo "Dont forget to install mutter-781835-workaround from AUR if you are nvidia user and have proprietary drivers installed." 
 echo
 echo "Done"
 

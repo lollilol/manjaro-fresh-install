@@ -1,0 +1,77 @@
+base_packages="chromium pinta yaourt teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter"
+uninstall_packages="memtest86+ gnome-screenshot"
+theme_packages="arc-gtk-theme"
+theme="Arc-Dark"
+shell_theme="Arc-Dark"
+icon_theme="Papirus-Dark-Maia"
+aur_packages="spotify discord mutter-781835-workaround"
+
+
+read -p "Continue? Only do this, if you freshly installed manjaro! (y/N) " start
+
+case "$start" in
+y|Y)
+
+clear
+sleep 1
+echo "This script installs packages and changes some configs."
+echo "Well, then, lets start!"
+echo
+echo "1. Packages"
+echo
+echo "1.1: Full System Upgrade"
+echo
+sudo pacman -Syu
+echo
+echo "1.2: Installing Base Packages"
+echo
+sudo pacman --noconfirm --needed -S $base_packages
+echo
+echo
+echo "1.2.2: Uninstall unused Packages"
+echo
+sudo pacman -R $uninstall_packages
+echo
+echo "1.3: Themes"
+echo
+echo "1.3.1: Installing Themes"
+echo
+sudo pacman --noconfirm --needed -S $theme_packages
+echo
+echo "1.3.2: Activate/Change Themes"
+gsettings set org.gnome.desktop.interface gtk-theme "$theme"
+gsettings set org.gnome.shell.extensions.user-theme name "$shell_theme"
+gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
+echo
+echo "1.4: Installing AUR Packages"
+echo
+yaourt --noconfirm --needed -S $aur_packages
+echo
+echo "2. Misc Configurations"
+echo
+echo "2.1: Disable Sound Effects in Gnome"
+gsettings set org.gnome.desktop.sound event-sounds false
+echo "2.2: Backup Original Pulseaudio Config and copy the one from the home dir"
+sudo mv /etc/pulse/default.pa /etc/pulse/default.pa.orig
+sudo cp ~/bin/install-fresh-system-c/pulseaudio-default.pa /etc/pulse/default.pa
+echo "2.2.1: Restart Pulseaudio"
+pulseaudio -k
+sleep 2
+pulseaudio --start
+echo
+echo "Done"
+
+
+;;
+*)
+
+echo
+echo Aborted!
+
+;;
+esac
+
+sleep 1
+echo Quitting now!
+sleep 1
+exit

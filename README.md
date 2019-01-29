@@ -49,3 +49,7 @@ The Theme supplied here will be activated as Icon Theme in Gnome3.
 
 The Packages supplied here will be installed with **yaourt --noconfirm --needed -S"
 
+**timeonze=**
+
+The Timezone supplied here will be linked to /etc/localtime
+Usage: `Europe/Berlin` / `America/New_York`

@@ -47,7 +47,7 @@ The Theme supplied here will be activated as Icon Theme in Gnome3.
 
 **aur_packages=**
 
-The Packages supplied here will be installed with **yaourt --noconfirm --needed -S"
+The Packages supplied here will be installed with **yay --noconfirm --needed -S"
 
 **timeonze=**
 

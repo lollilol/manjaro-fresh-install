@@ -1,5 +1,5 @@
 # manjaro-fresh-install
-little bash script to install some packages and move config files
+basic bash script to install some packages and move config files
 
 ## Disclaimer
 this is just my personal script to install some key packages in my system, if i installed it freshly.

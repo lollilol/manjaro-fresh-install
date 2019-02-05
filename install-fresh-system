@@ -1,4 +1,4 @@
-base_packages="chromium pinta yaourt teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter ntp telegram-desktop filezilla grub-customizer winetricks alacarte mtools os-prober xdotool"
+base_packages="chromium pinta teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter ntp telegram-desktop filezilla grub-customizer winetricks alacarte mtools os-prober xdotool yay"
 uninstall_packages="memtest86+ gnome-screenshot"
 theme_packages="arc-gtk-theme"
 gtk_theme="Arc-Dark"
@@ -45,7 +45,7 @@ gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
 echo
 echo "1.4: Installing AUR Packages"
 echo
-yaourt --noconfirm --needed -S $aur_packages
+yay --noconfirm --needed -S $aur_packages
 echo
 echo "2. Misc Configurations"
 echo

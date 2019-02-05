@@ -1,4 +1,4 @@
-base_packages="chromium pinta teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter ntp telegram-desktop filezilla grub-customizer winetricks alacarte mtools os-prober xdotool yay"
+base_packages="chromium pinta teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter ntp telegram-desktop filezilla grub-customizer winetricks alacarte mtools os-prober xdotool yay python3"
 uninstall_packages="memtest86+ gnome-screenshot"
 theme_packages="arc-gtk-theme"
 gtk_theme="Arc-Dark"

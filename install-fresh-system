@@ -74,11 +74,11 @@ sudo cp ~/bin/install-fresh-system-c/razer/init_blackwidow.py /root/init_blackwi
 sudo cp ~/bin/install-fresh-system-c/razer/razer_blackwidow.rules /etc/udev/rules.d/razer_blackwidow.rules
 sudo chmod a+x /root/init_blackwidow.py
 #echo "2.5.2 Razer Deathadder Elite Init"
-echo
-echo "2.6 Installing 31_hold_shift"
-sudo cp ~/bin/install-fresh-system-c/31_hold_shift /etc/grub.d
-sudo chmod a+x /etc/grub.d/31_hold_shift
-sudo update-grub
+#echo
+#echo "2.6 Installing 31_hold_shift"
+#sudo cp ~/bin/install-fresh-system-c/31_hold_shift /etc/grub.d
+#sudo chmod a+x /etc/grub.d/31_hold_shift
+#sudo update-grub
 
 echo "3. Notes"
 echo

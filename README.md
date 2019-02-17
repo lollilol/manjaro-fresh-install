@@ -9,12 +9,12 @@ Theme Options are currently only supported when using gnome3.
 ## Download
 
 #### Direct Link
-> https://raw.githubusercontent.com/lollilol/manjaro-fresh-install/master/install-fresh-system
+> https://git.io/fh5VE
 
 #### OneCommand
 
 ```
-$ wget https://raw.githubusercontent.com/lollilol/manjaro-fresh-install/master/install-fresh-system && nano install-fresh-system && chmod +x install-fresh-system && ./install-fresh-system
+$ wget -O install-fresh-system https://git.io/fh5VE && nano install-fresh-system && chmod +x install-fresh-system && ./install-fresh-system
 ```
 
 ## Setup

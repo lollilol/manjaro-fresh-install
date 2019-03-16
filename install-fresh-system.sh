@@ -1,6 +1,6 @@
 #documentation: https://github.com/lollilol/manjaro-fresh-install/blob/master/README.md#setup
 base_packages="chromium pinta teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter ntp 
-telegram-desktop filezilla grub-customizer winetricks alacarte mtools os-prober xdotool yay python3 flatpak cmake gsettings-desktop-schemas"
+telegram-desktop filezilla grub-customizer winetricks alacarte mtools os-prober xdotool yay python3 flatpak cmake gsettings-desktop-schemas python-pyusb"
 uninstall_packages="memtest86+ gnome-screenshot lollypop"
 theme_packages="arc-gtk-theme"
 gtk_theme="Arc-Dark"
@@ -8,7 +8,7 @@ shell_theme="Arc-Dark"
 icon_theme="Papirus-Dark-Maia"
 aur_packages="spotify discord ttf-emojione ttf-google-sans ttf-opensans minecrafter-ttf jre winscp woeusb minecraft-launcher ttf-ms-fonts chromium-widevine"
 timezone="Europe/Berlin"
-working_dir=~/manjaro-fresh-install #the folder where the base script and the folder is in.
+content_dir=~/manjaro-fresh-install/install-fresh-system.d #the content folder
 
 read -p "Continue? Only do this, if you freshly installed manjaro! (y/N) " start
 
@@ -56,13 +56,13 @@ echo "2.1: Disable Sound Effects in Gnome"
 gsettings set org.gnome.desktop.sound event-sounds false
 echo "2.2: Backup Original Pulseaudio Config and copy the one from the home dir"
 sudo mv /etc/pulse/default.pa /etc/pulse/default.pa.orig
-sudo cp $working_dir/pulseaudio-default.pa /etc/pulse/default.pa
+sudo cp $content_dir/pulseaudio-default.pa /etc/pulse/default.pa
 echo "2.2.1: Restart Pulseaudio"
 pulseaudio -k
 sleep 2
 pulseaudio --start
 echo "2.3: Telegram Tray Autostart"
-cp $working_dir/telegramdesktop_tray.desktop ~/.config/autostart/telegramdesktop_tray.desktop
+cp $content_dir/telegramdesktop_tray.desktop ~/.config/autostart/telegramdesktop_tray.desktop
 echo "2.4: Various Time Configurations"
 echo
 sudo ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
@@ -71,15 +71,15 @@ echo
 echo "2.5 Init Razer Stuff"
 sudo gpasswd -a lollilol plugdev
 echo "2.5.1 Razer Blackwidow Init"
-sudo cp $working_dir/razer/init_blackwidow.py /root/init_blackwidow.py
-sudo cp $working_dir/razer/razer_blackwidow.rules /etc/udev/rules.d/razer_blackwidow.rules
+sudo cp $content_dir/razer/init_blackwidow.py /root/init_blackwidow.py
+sudo cp $content_dir/razer/razer_blackwidow.rules /etc/udev/rules.d/razer_blackwidow.rules
 sudo chmod a+x /root/init_blackwidow.py
 #echo "2.5.2 Razer Deathadder Elite Init"
-#echo
-#echo "2.6 Installing 31_hold_shift"
-#sudo cp $working_dir/31_hold_shift /etc/grub.d
-#sudo chmod a+x /etc/grub.d/31_hold_shift
-#sudo update-grub
+echo
+echo "2.6 Installing 31_hold_shift"
+sudo cp $content_dir/31_hold_shift /etc/grub.d
+sudo chmod a+x /etc/grub.d/31_hold_shift
+sudo update-grub
 
 echo "3. Notes"
 echo

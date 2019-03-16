@@ -1,5 +1,6 @@
 #documentation: https://github.com/lollilol/manjaro-fresh-install/blob/master/README.md#setup
-base_packages="chromium pinta teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter ntp telegram-desktop filezilla grub-customizer winetricks alacarte mtools os-prober xdotool yay python3 flatpak"
+base_packages="chromium pinta teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter ntp 
+telegram-desktop filezilla grub-customizer winetricks alacarte mtools os-prober xdotool yay python3 flatpak cmake gsettings-desktop-schemas"
 uninstall_packages="memtest86+ gnome-screenshot lollypop"
 theme_packages="arc-gtk-theme"
 gtk_theme="Arc-Dark"

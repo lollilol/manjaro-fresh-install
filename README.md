@@ -9,12 +9,12 @@ Theme Options are currently only supported when using gnome3.
 ## Download
 
 #### Direct Link
-> https://git.io/fh5VE
+> https://git.io/fj8M7
 
 #### OneCommand
 
 ```
-$ wget -O install-fresh-system https://git.io/fh5VE && nano install-fresh-system && chmod +x install-fresh-system && ./install-fresh-system
+$ wget -O install-fresh-system https://git.io/fj8M7 && nano install-fresh-system.sh && chmod +x install-fresh-system.sh && ./install-fresh-system.sh
 ```
 
 ## Setup

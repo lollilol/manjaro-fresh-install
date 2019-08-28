@@ -23,33 +23,34 @@ $ wget -O install-fresh-system https://git.io/fj8M7 && nano install-fresh-system
 #### Just edit the script with your favorite text editor
 **base_packages=**
 
-The Packages supplied here wil get installed on your system with **pacman--noconfirm --needed -S**
+The Packages entered here wil get installed on your system with **pacman--noconfirm --needed -S**
 
 **uninstall_packages=**
 
-The Packages supplied here will get uninstalled just with **pacman -R**
+The Packages entered here will get uninstalled just with **pacman -R**
 
 **theme_packages=**
 
-Every Package supplied here will just get installed like the base packages. Base packages and theme packages are just seperated for better understanding.
+Every Package entered here will just get installed like the base packages. Base packages and theme packages are just seperated for better understanding.
 
 **gtk_theme=**
 
-The Theme supplied here will be activated as GTK Theme in Gnome3.
+The Theme entered here will be activated as GTK Theme in Gnome3.
 
 **shell_theme=**
 
-The Theme supplied here will be activated as Shell Theme in Gnome3.
+The Theme entered here will be activated as Shell Theme in Gnome3.
 
 **icon_theme=**
 
-The Theme supplied here will be activated as Icon Theme in Gnome3.
+The Theme entered here will be activated as Icon Theme in Gnome3.
 
 **aur_packages=**
 
-The Packages supplied here will be installed with **yay --noconfirm --needed -S"
+The Packages entered here will be installed with **yay --noconfirm --needed -S"
 
 **timeonze=**
 
-The Timezone supplied here will be linked to /etc/localtime
-Usage: `Europe/Berlin` / `America/New_York`
+The Timezone entered here will be linked to /etc/localtime
+
+List all timezones with: `timedatectl list-timezones`

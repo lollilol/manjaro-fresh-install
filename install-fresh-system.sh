@@ -1,16 +1,16 @@
 #documentation: https://github.com/lollilol/manjaro-fresh-install/blob/master/README.md#setup
-base_packages="chromium pinta teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter ntp 
+base_packages="discord chromium pinta teamspeak3 wine wine-mono wine_gecko grub-customizer figlet pavucontrol nemo nemo-fileroller nemo-image-converter xfce4-taskmanager xfce4-screenshooter ntp 
 telegram-desktop filezilla grub-customizer winetricks alacarte mtools os-prober xdotool yay python3 flatpak cmake gsettings-desktop-schemas python-pyusb"
 uninstall_packages="memtest86+ gnome-screenshot lollypop"
 theme_packages="arc-gtk-theme"
 gtk_theme="Arc-Dark"
 shell_theme="Arc-Dark"
 icon_theme="Papirus-Dark-Maia"
-aur_packages="spotify discord ttf-emojione ttf-google-sans ttf-opensans minecrafter-ttf jre winscp woeusb minecraft-launcher ttf-ms-fonts chromium-widevine"
+aur_packages="spotify ttf-joypixels ttf-google-sans ttf-opensans jre winscp woeusb minecraft-launcher ttf-ms-fonts chromium-widevine"
 timezone="Europe/Berlin"
 content_dir=~/manjaro-fresh-install/install-fresh-system.d #the content folder
 
-read -p "Continue? Only do this, if you freshly installed manjaro! (y/N) " start
+read -p "Continue? (This script changes important system files and settings, you have been warned!) (y/N) " start
 
 case "$start" in
 y|Y)
@@ -69,7 +69,7 @@ sudo ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
 sudo ntpdate 0.pool.ntp.org
 echo
 echo "2.5 Init Razer Stuff"
-sudo gpasswd -a lollilol plugdev
+sudo gpasswd -a $USER plugdev
 echo "2.5.1 Razer Blackwidow Init"
 sudo cp $content_dir/razer/init_blackwidow.py /root/init_blackwidow.py
 sudo cp $content_dir/razer/razer_blackwidow.rules /etc/udev/rules.d/razer_blackwidow.rules
@@ -86,7 +86,7 @@ echo
 echo "Dont forget to install mutter-781835-workaround from AUR if you are nvidia user and have proprietary drivers installed." 
 echo
 echo "Done"
-
+notify-send 'Script Done!' 'Install-Fresh-System.sh is done!'
 ;;
 *)
 
